@@ -1,0 +1,20 @@
+title: Annual Reviews Style 1
+author: Christopher Kenny
+version: 1.0.0
+quarto-required: ">=1.4.0"
+contributes:
+  formats:
+    common:
+      toc: true
+      filters:
+        - annual-reviews.lua
+    pdf:
+      include-in-header: header.tex
+      format-resources:
+        - "ar-1col-S20.cls"
+        - "ar-style1.bst"
+      partials:
+        - "partials/doc-class.tex"
+        - "partials/title.tex"
+        - "partials/_affiliation.tex"
+        - "partials/before-body.tex"

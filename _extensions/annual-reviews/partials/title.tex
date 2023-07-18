@@ -1,0 +1,43 @@
+% Page header
+\markboth{$if(runningauthor)$$runningauthor$$endif$}{$if(runningtitle)$$runningtitle$$endif$}
+
+% Title
+$if(title)$
+\title{$title$}
+$endif$
+
+% author
+\author{
+$for(by-author)$
+$by-author.name.literal$\textsuperscript{$if(by-author.affiliations)$$for(by-author.affiliations)$$it.id$$sep$,$endfor$$endif$}
+$endif$
+% affil
+$for(by-affiliation)$
+\affil{\textsuperscript{$it.id$}$_affiliation.tex()$}
+$endfor$
+}
+
+% Metadata Information
+$if(journal-name)$
+\jname{$journal-name$}
+$else$
+\jname{Xxxx. Xxx. Xxx. Xxx.}
+$endif$
+
+$if(journal-volume)$
+\jvol{$journal-volume$}
+$else$
+\jvol{AA}
+$endif$
+
+$if(journal-year)$
+\jyear{$journal-year$}
+$else$
+\jyear{YYYY}
+$endif$
+
+$if(doi)$
+\doi{$doi$}
+$else$
+\doi{10.1146/((please add article doi))}
+$endif$
