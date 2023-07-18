@@ -11,7 +11,7 @@ contributes:
     pdf:
       include-in-header: header.tex
       format-resources:
-        - "ar-1col-S20.cls"
+        - "ar-1col-S2O.cls"
         - "ar-style1.bst"
       partials:
         - "partials/doc-class.tex"

@@ -3,7 +3,6 @@ title: Annual-reviews Template
 format:
   annual-reviews-pdf:
     keep-tex: true  
-  annual-reviews-html: default
 author:
   - name: Sarah Malloc
     affiliations:
