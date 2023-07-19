@@ -13,7 +13,7 @@ contributes:
       format-resources:
         - "ar-1col-S2O.cls"
         - "ar-style1.bst"
-      partials:
+      template-partials:
         - "partials/doc-class.tex"
         - "partials/title.tex"
         - "partials/_affiliation.tex"

@@ -10,7 +10,7 @@ $endif$
 \author{
 $for(by-author)$
 $by-author.name.literal$\textsuperscript{$if(by-author.affiliations)$$for(by-author.affiliations)$$it.id$$sep$,$endfor$$endif$}
-$endif$
+$endfor$
 % affil
 $for(by-affiliation)$
 \affil{\textsuperscript{$it.id$}$_affiliation.tex()$}
