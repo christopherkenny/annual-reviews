@@ -1,6 +1,22 @@
+% Page header
+\markboth{$if(runningauthor)$$runningauthor$$else$Authors et al.$endif$}{$if(runningtitle)$$runningtitle$$else$Short Title$endif$}
+
+% Title
 $if(title)$
-\maketitle
+\title{$title$}
 $endif$
+
+% author
+\author{
+$for(by-author)$
+$by-author.name.literal$\textsuperscript{$if(by-author.affiliations)$$for(by-author.affiliations)$$it.id$$sep$,$endfor$$endif$}
+$endfor$
+% affil
+$for(by-affiliation)$
+\affil{\textsuperscript{$it.id$}$_affiliation.tex()$}
+$endfor$
+}
+
 
 $if(abstract)$
 \begin{abstract}
@@ -9,5 +25,11 @@ $abstract$
 $endif$
 
 $if(keywords)$
-\keywords{$for(keywords)$$keywords$$sep$, $endfor$}
+\begin{keywords}
+$for(keywords)$$keywords$$sep$, $endfor$
+\end{keywords}
+$endif$
+
+$if(title)$
+\maketitle
 $endif$

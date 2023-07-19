@@ -18,3 +18,4 @@ contributes:
         - "partials/title.tex"
         - "partials/_affiliation.tex"
         - "partials/before-body.tex"
+        - "partials/before-bib.tex"

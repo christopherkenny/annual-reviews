@@ -1,37 +1,159 @@
 ---
-title: Quarto for Annual Reviews
+title: Quarto Title for Annual Reviews
 format:
   annual-reviews-pdf:
     keep-tex: true  
     toc: true
+runningtitle: Quarto Annual Reviews
+runningauthor: One, Two, and Three
 author:
-  - name: Sarah Malloc
+  - name: Author One
     affiliations:
-      - name: An Organization
-        department: The Department
-        address: 1 Main St
-        city: Boston
-        country: USA
-        postal-code: 02210-1022
-      - A second affilication
-    orcid: 0000-0000-0000-0000
-    email: sm@example.org
-    url: https://example.org/
-  - name: Eliza Dealloc
+      - name: Harvard University
+        id: 1
+        department: Department of Government
+        city: Cambridge
+        state: MA
+        postal-code: 02138
+      - name: Harvard University
+        id: 3
+        department: Department of Statistics
+        city: Cambridge
+        state: MA
+        postal-code: 02138
+    attributes:
+      equal-contributor: true
+  - name: Author Two
     affiliations:
-      - Another Affiliation
+      - name: Yale University
+        id: 2
+        department: Department of Political Science
+        city: New Haven
+        state: CT
+        postal-code: 06511
+    email: corresponding@email.com
+    attributes:
+      equal-contributor: true
+      corresponding: true
+  - name: Author Three
+    affiliations:
+      - ref: 1
 abstract: |
-  This document is a template demonstrating the `annual-reviews` format.
+  This document is a template demonstrating the annual-reviews format.
 keywords: [template, demo]
 bibliography: bibliography.bib
 journal-name: Annual Review of Political Science
 journal-volume: AA
 journal-year: 2023
 doi: "10.1146/annurev-polisci-XXXXXX-XXXXXX"
+conflict-of-interest: |
+  The authors are not aware of any affiliations, memberships, funding, or financial holdings that
+  might be perceived as affecting the objectivity of this review.
+acknowledgements: |
+  Acknowledgements, general annotations, funding.
 ---
 
-## Introduction {#sec-intro}
+# Introduction {#sec-intro}
 
-*TODO* Create a template that demonstrates the appearance, formatting, layout, and functionality of your format. Learn more about journal formats at <https://quarto.org/docs/journals/>.
+Thanks for using Quarto to write your article. 
+This Quarto template is unofficial and based on Annual Reviews' LaTeX template.
+This is called the "Style 1" template, which may not be the only template.
+Some examples of commonly used commands and features are listed below, to help you get started.
+
+Since we are in Quarto, you can cite with an `@` symbol, like @knuth1984texbook. As seen below, you can mix markdown and Latex with each other, though it's likely best to mostly use markdown.
+
+# Cross Referencing
+
+To reference a figure with example label "plot", use `@fig-plot`. 
+Analogously, to reference a table with example label "data", use `@tbl-data`.
+To reference a section, such as the Introduction (@sec-intro), use `@sec-intro`.
+
+For complete information on cross referencing with Quarto, see <https://quarto.org/docs/authoring/cross-references.html>.
+
+# First Figure and Acknowledgements
+
+The LaTeX template that this is Quarto template is built on breaks if there is a figure on the first page.
+To avoid this issue, ensure that you have filled out all of the author information.
+This includes an acknowledgements entry in the header, which indicates author biographical information, along with any additional acknowledgements.
+
+Acknowledgements should indicate the author's name, position, and affiliation, in the form of "Name is a Position at Affiliation." If the author has an [ORCID account](https://orcid.org/), their orcid should be placed in a call to `\authororcid{0000-0002-8514-4315}`, like so.
+It then contains an extremely abbreviated biography, typically two sentences or so long.
+Finally, the acknowledgement contains any standard acknowledgements. 
 
 
+# Citations
+
+Quarto formats citations and references automatically using the bibliography records in your .bib file. For a citation in parentheses use [@greenwade93] and for a text citation: @greenwade93. Multiple citations can be given as [@greenwade93;@knuth1984texbook]. Drop the author like so [-@greenwade93].
+
+
+# Tables and Figures
+
+To include figures, you can use Quarto syntax.
+
+![Example figure](SampleFigure.pdf){#fig-plot}
+
+For both figures and tables, you can use LaTeX syntax if you need additional customizability. 
+Like, for a fancy table like this, LaTeX is likely easiest.
+
+\begin{table}[h]
+\tabcolsep7.5pt
+\caption{Table caption}
+\label{tbl-fancy}
+\begin{center}
+\begin{tabular}{@{}l|c|c|c|c@{}}
+\hline
+Head 1 &&&&Head 5\\
+{(}units)$^{\rm a}$ &Head 2 &Head 3 &Head 4 &{(}units)\\
+\hline
+Column 1 &Column 2 &Column3$^{\rm b}$ &Column4 &Column\\
+Column 1 &Column 2 &Column3 &Column4 &Column\\
+Column 1 &Column 2 &Column3 &Column4 &Column\\
+Column 1 &Column 2 &Column3 &Column4 &Column\\
+\hline
+\end{tabular}
+\end{center}
+\begin{tabnote}
+$^{\rm a}$Table footnote; $^{\rm b}$second table footnote.
+\end{tabnote}
+\end{table}
+
+# Fancy Annual Reviews Components
+
+## Sidebars and Margin Notes
+
+To include margin notes, use the margin notes.
+You may be interested in using this with the [latex-environment Quarto extension](https://github.com/quarto-ext/latex-environment).
+
+\begin{marginnote}[]
+\entry{Term A}{definition}
+\entry{Term B}{definition}
+\entry{Term C}{defintion}
+\end{marginnote}
+
+Sidebars use `textbox` environments.
+
+\begin{textbox}[h]\section{SIDEBARS}
+Sidebar text goes here.
+\subsection{Sidebar Second-Level Heading}
+More text goes here.\subsubsection{Sidebar third-level heading}
+Text goes here.\end{textbox}
+
+Summary Points use the `summary` environment.
+\begin{summary}[SUMMARY POINTS]
+\begin{enumerate}
+\item Summary point 1. These should be full sentences.
+\item Summary point 2. These should be full sentences.
+\item Summary point 3. These should be full sentences.
+\item Summary point 4. These should be full sentences.
+\end{enumerate}
+\end{summary}
+
+Future Issues use the `issues` environment.
+\begin{issues}[FUTURE ISSUES]
+\begin{enumerate}
+\item Future issue 1. These should be full sentences.
+\item Future issue 2. These should be full sentences.
+\item Future issue 3. These should be full sentences.
+\item Future issue 4. These should be full sentences.
+\end{enumerate}
+\end{issues}

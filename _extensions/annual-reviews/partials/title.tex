@@ -1,22 +1,3 @@
-% Page header
-\markboth{$if(runningauthor)$$runningauthor$$endif$}{$if(runningtitle)$$runningtitle$$endif$}
-
-% Title
-$if(title)$
-\title{$title$}
-$endif$
-
-% author
-\author{
-$for(by-author)$
-$by-author.name.literal$\textsuperscript{$if(by-author.affiliations)$$for(by-author.affiliations)$$it.id$$sep$,$endfor$$endif$}
-$endfor$
-% affil
-$for(by-affiliation)$
-\affil{\textsuperscript{$it.id$}$_affiliation.tex()$}
-$endfor$
-}
-
 % Metadata Information
 $if(journal-name)$
 \jname{$journal-name$}
@@ -33,7 +14,7 @@ $endif$
 $if(journal-year)$
 \jyear{$journal-year$}
 $else$
-\jyear{YYYY}
+\jyear{2023}
 $endif$
 
 $if(doi)$
