@@ -1,8 +1,9 @@
 ---
-title: Annual-reviews Template
+title: Quarto for Annual Reviews
 format:
   annual-reviews-pdf:
     keep-tex: true  
+    toc: true
 author:
   - name: Sarah Malloc
     affiliations:
@@ -20,9 +21,13 @@ author:
     affiliations:
       - Another Affiliation
 abstract: |
-  This document is a template demonstrating the Annual-reviews format.
+  This document is a template demonstrating the `annual-reviews` format.
 keywords: [template, demo]
-bibliography: bibliography.bib  
+bibliography: bibliography.bib
+journal-name: Annual Review of Political Science
+journal-volume: AA
+journal-year: 2023
+doi: "10.1146/annurev-polisci-XXXXXX-XXXXXX"
 ---
 
 ## Introduction {#sec-intro}
